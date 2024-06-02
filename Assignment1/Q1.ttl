@@ -1,0 +1,51 @@
+@prefix sweba1: <http://iiitd.ac.in/course/sweb/student/2021111/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+sweba1:Ben sweba1:takes sweba1:Databases .
+sweba1:Ben sweba1:advisor sweba1:Lisa .
+sweba1:Ben rdf:type sweba1:Student .
+
+sweba1:Fred sweba1:teaches sweba1:Databases .
+sweba1:Fred sweba1:memberOf sweba1:InfoLab .
+sweba1:Fred rdf:type sweba1:Professor .
+
+sweba1:InfoLab sweba1:subOrgOf sweba1:CS .
+sweba1:InfoLab rdf:type sweba1:ResearchGrp .
+
+sweba1:John sweba1:takes sweba1:Databases .
+sweba1:John sweba1:advisor sweba1:Fred .
+sweba1:John rdf:type sweba1:Student .
+
+sweba1:Lee sweba1:advisor sweba1:James .
+sweba1:Lee rdf:type sweba1:Student .
+sweba1:Lee sweba1:takes sweba1:Algorithms .
+
+sweba1:Tim rdf:type sweba1:Professor .
+sweba1:Tim sweba1:teaches sweba1:Databases .
+
+sweba1:James sweba1:teaches sweba1:Algorithms .
+sweba1:James rdf:type sweba1:Professor .
+sweba1:James sweba1:worksFor sweba1:CS .
+
+sweba1:Peter rdf:type sweba1:Student .
+sweba1:Peter sweba1:advisor sweba1:James .
+sweba1:Peter sweba1:takes sweba1:Algorithms .
+
+sweba1:Databases rdf:type sweba1:Course .
+sweba1:Algorithms rdf:type sweba1:Course .
+sweba1:CS rdf:type sweba1:Department .
+
+sweba1:Student rdfs:subClassOf sweba1:Person .
+sweba1:Professor rdfs:subClassOf sweba1:Person .
+
+sweba1:Course rdf:type rdfs:Class .
+sweba1:Department rdf:type rdfs:Class .
+
+sweba1:subOrgOf rdfs:domain sweba1:ResearchGrp .
+sweba1:takes rdfs:domain sweba1:Student .
+sweba1:takes rdfs:range sweba1:Course .
+
+sweba1:memberOf rdf:type rdfs:ContainerMembershipProperty .
+sweba1:teaches rdf:type rdf:Property .
+sweba1:worksFor rdf:type rdf:Property .

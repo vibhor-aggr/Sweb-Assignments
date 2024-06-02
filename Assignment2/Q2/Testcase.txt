@@ -1,0 +1,46 @@
+Input
+F ((2p0q)0(2p12q)) 
+
+Output
+Level 0
+1.1 F ((2p0q)0(2p12q))
+
+Level 1
+1.1 F (2p0q)
+2.1 F (2p12q)
+
+Level 2
+1.1 F 2p
+2.1 F q
+Level 2
+1.2 T p
+Level 1
+2.2 F 2p
+2.3 F 2q
+Level 1
+2.4 T p
+Level 1
+2.7 T q
+
+
+Input
+F (2p0q)1(q02p)
+
+Output
+Level 0
+1.1 F (2p0q)1(q02p)
+Level 0
+1.2 F (2p0q)
+1.3 F (q02p)
+
+Level 1
+1.1 F 2p
+2.1 F q
+Level 1
+1.2 T p
+
+Level 1
+1.1 F q
+2.1 F 2p
+Level 1
+2.2 T p

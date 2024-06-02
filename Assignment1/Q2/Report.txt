@@ -1,0 +1,44 @@
+[rule1: (?A ?P ?B) -> (?P rdf:type rdf:Property)]
+sweba1:InfoLab sweba1:subOrgOf sweba1:CS .
+(<http://iiitd.ac.in/course/sweb/student/2021111/subOrgOf> rdf:type rdf:Property)
+
+[rule2: (?A ?P ?B) -> (?A rdf:type rdfs:Resource), (?B rdf:type rdfs:Resource)]
+sweba1:Ben rdf:type sweba1:Student .
+(<http://iiitd.ac.in/course/sweb/student/2021111/Ben> rdf:type rdfs:Resource)
+(<http://iiitd.ac.in/course/sweb/student/2021111/Student> rdf:type rdfs:Resource)
+
+[rule3: (?A ?P ?B), (?P rdfs:domain ?C) -> (?A rdf:type ?C)]
+sweba1:Lee sweba1:takes sweba1:Algorithms .
+sweba1:takes rdfs:domain sweba1:Student .
+(<http://iiitd.ac.in/course/sweb/student/2021111/Lee> rdf:type <http://iiitd.ac.in/course/sweb/student/2021111/Student>)
+
+[rule4: (?A ?P ?B), (?P rdfs:range ?C) -> (?B rdf:type ?C)]
+sweba1:Ben sweba1:takes sweba1:Databases .
+sweba1:takes rdfs:range sweba1:Course .
+(<http://iiitd.ac.in/course/sweb/student/2021111/Databases> rdf:type <http://iiitd.ac.in/course/sweb/student/2021111/Course>)
+
+[rule5: (?P rdf:type rdf:Property) -> (?P rdf:subPropertyOf ?P)]
+sweba1:worksFor rdf:type rdf:Property .
+(<http://iiitd.ac.in/course/sweb/student/2021111/worksFor> rdf:subPropertyOf <http://iiitd.ac.in/course/sweb/student/2021111/worksFor>)
+
+[rule6: (?C rdf:type rdfs:Class) -> (?C rdfs:subClassOf rdfs:Resource)]
+sweba1:Department rdf:type rdfs:Class .
+(<http://iiitd.ac.in/course/sweb/student/2021111/Department> rdfs:subClassOf rdfs:Resource)
+
+[rule7: (?C rdf:type rdfs:Class) -> (?C rdfs:subClassOf ?C)]
+sweba1:Course rdf:type rdfs:Class .
+(<http://iiitd.ac.in/course/sweb/student/2021111/Course> rdfs:subClassOf <http://iiitd.ac.in/course/sweb/student/2021111/Course>)
+
+[rule8: (?B rdfs:subClassOf ?C), (?A rdf:type ?C) -> (?A rdf:type ?B)]
+sweba1:Professor rdfs:subClassOf sweba1:Person .
+sweba1:James rdf:type sweba1:Professor .
+(<http://iiitd.ac.in/course/sweb/student/2021111/James> rdf:type <http://iiitd.ac.in/course/sweb/student/2021111/Person>)
+
+[rule9: (?P rdfs:range ?C), (?A ?P ?B) -> (?B rdf:type ?C)]
+sweba1:takes rdfs:range sweba1:Course .
+sweba1:Peter sweba1:takes sweba1:Algorithms .
+(<http://iiitd.ac.in/course/sweb/student/2021111/Algorithms> rdf:type <http://iiitd.ac.in/course/sweb/student/2021111/Course>)
+
+[rule10: (?P rdf:type rdfs:ContainerMembershipProperty) -> (?P rdfs:subPropertyOf rdfs:member)]
+sweba1:memberOf rdf:type rdfs:ContainerMembershipProperty .
+(<http://iiitd.ac.in/course/sweb/student/2021111/memberOf> rdfs:subPropertyOf rdfs:member)
